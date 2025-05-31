@@ -21,7 +21,7 @@ growth = ((revenue.iloc[0] - revenue.iloc[1]) / revenue.iloc[1]) * 100 #iloc sta
 print(f"\n Revenue Growth Over Years:{growth:.2f}%") #Show percentage growth in revenue from the oldest year to most recent year
 
 #plot the data graphs 
-plt.figure(figsize=(10,5))
+plt.figure(figsize=(10,5)) #size of the chart lenghth and breath
 plt.plot(revenue.index, revenue.values/1e9, marker='o', label='Revenue (in Billions)') # divide by 1e9 to conver in billons
 plt.plot(net_income.index, net_income.values/1e9, marker='s', label='Net Income (in Billons)')
 plt.title(f"{ticker} Revenue & income Trend")
@@ -32,4 +32,8 @@ plt.grid(True)
 plt.tight_layout()
 plt.savefig(f"{ticker}_trend.png")
 plt.show()
+#Save to csv
+combined_df = pd.DataFrame({'Revenue':revenue,'Net Income':net_income})
+combined_df.to_csv(f"{ticker}_finacial.csv")
+print(f"Fincial data saved as '{ticker}_finacial.csv'")
 

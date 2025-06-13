@@ -1,8 +1,3 @@
-Here’s a polished `README.md` tailored for your **Company Revenue Analyzer** project:
-
----
-
-````markdown
 # Company Revenue Analyzer
 
 A Python tool that automatically fetches and visualizes company financial performance over time using `yfinance`, `pandas`, and `matplotlib`.
